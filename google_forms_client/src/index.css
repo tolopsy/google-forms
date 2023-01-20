@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+body {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: #fff;
+  font-family: Roboto,Arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer utilities {
+  .tw-font-family-title {
+    font-family: 'Google Sans',Roboto,Arial,sans-serif;
+  }
+
+  .tw-font-family-normal {
+    font-family: Roboto,Arial,sans-serif;
+  }
+}
