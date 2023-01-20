@@ -1,5 +1,5 @@
 {
-  "name": "quick_form_client",
+  "name": "google_forms_client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
