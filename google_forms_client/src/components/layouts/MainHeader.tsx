@@ -4,6 +4,7 @@ import { IconButton } from "@mui/material"
 import AppsIcon from "@mui/icons-material/Apps"
 
 import formImage from "../../assets/img/forms_icon.png"
+import MainMenu from "./parts/MainMenu"
 
 
 export type HeaderProps = Omit<ComponentProps<"div">, "children">
@@ -18,16 +19,16 @@ export default function MainHeader({className: classNameEx, ...props}: HeaderPro
       }, classNameEx)}
     >
       <div className="tw-font-family-title tw-flex tw-items-center">
-        {/* Add Menu component here*/}
+        <MainMenu/>
         <img src={formImage} alt="form" width="40px" height="40px" />
-        <div className="tw-pl-4 tw-text-[22px] tw-text-[#5f6368]">Forms</div>
+        <div className="tw-pl-4 tw-text-[22px] tw-color-neutral">Forms</div>
       </div>
 
       {/* Add SearchInput Component */}
 
       <div className="tw-flex tw-items-center">
         <IconButton>
-          <AppsIcon />
+          <AppsIcon/>
         </IconButton>
         {/* Add Avatar Component*/}
       </div>
