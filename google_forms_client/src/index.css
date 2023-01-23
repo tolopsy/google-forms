@@ -20,4 +20,13 @@ body {
   .tw-font-family-normal {
     font-family: Roboto,Arial,sans-serif;
   }
+
+  .tw-color-neutral {
+    color: #5f6368;
+  }
+
+  .tw-color-menu {
+    color: #3c4043;
+  }
+
 }
