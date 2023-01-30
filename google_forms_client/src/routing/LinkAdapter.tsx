@@ -7,7 +7,7 @@ export type LinkAdapterProps = Omit<LinkProps, "to"> & {
 };
 
 const LinkAdapter = forwardRef<HTMLAnchorElement, LinkAdapterProps>(
-  function RouterLink(
+  function LinkAdapter(
     {to, external, children, ...props},
     ref
   ) {
