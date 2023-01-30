@@ -1,10 +1,9 @@
 import React from 'react';
+import Home from './scenes/home/Home';
 
 function App() {
   return (
-    <div className="App">
-      <p className="tw-font-medium tw-py-8">Hello World</p>
-    </div>
+    <Home/>
   );
 }
 
