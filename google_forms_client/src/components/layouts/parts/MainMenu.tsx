@@ -42,7 +42,7 @@ export default function MainMenu() {
     {id: "forms", icon: formsIcon, label: "Forms", to: url("home"), external: false},
   ]
 
-  /*TODO: Handle Settings and Help click event*/
+  // TODO: Handle Settings and Help click event
   const section2MenuItems: MenuItem[] = [
     {id: "settings", icon: <FiSettings/>, label: "Settings", onClick: undefined},
     {id: "help", icon: <BsQuestionCircle/>, label: "Help and Feedback", onClick: undefined}
@@ -58,7 +58,7 @@ export default function MainMenu() {
         <MenuIcon />
       </IconButton>
       <Drawer open={open} anchor='left' onClose={handleCloseMenu}>
-        <div className="tw-w-250" role="presentation">
+        <div className="tw-w-[280px]" role="presentation">
           <List>
             <ListItem>
               <ListItemText className="tw-ml-1 tw-text-5xl">
