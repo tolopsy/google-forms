@@ -8,7 +8,7 @@ const routes = {
   "home": "/",
 };
 
-export function getRoute(routeName: keyof typeof routes): string {
+export function getPath(routeName: keyof typeof routes): string {
   if (!routes[routeName]) {
     throw new RouteNotExist(`Unknown route "${routeName}"`);
   }
@@ -17,5 +17,5 @@ export function getRoute(routeName: keyof typeof routes): string {
 }
 
 export function url(routeName: keyof typeof routes, routeParams?: Record<string, string | number | undefined>): string {
-  return generatePath(getRoute(routeName), routeParams);
+  return generatePath(getPath(routeName), routeParams);
 }
