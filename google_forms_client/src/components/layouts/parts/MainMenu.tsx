@@ -89,19 +89,12 @@ function MenuList({className: classNameEx, items, ...props}: MenuListProps) {
   return (
     <List className={clsx("tw-mx-2 tw-mt-3.5", classNameEx)} {...props}>
       {items.map(item => (
-        item.to !== undefined ? (
-          <LinkAdapter to={item.to} external={item.external} onClick={item.onClick} key={item.id}>
-            <ListItem className="tw-mr-2.5">
-              <MenuItemIcon icon={item.icon} alt={item.id}/>
-              <div className="tw-ml-5 tw-font-medium tw-text-sm tw-color-menu">{item.label}</div>
-            </ListItem>
-          </LinkAdapter>
-        ) : (
+        <LinkAdapter to={item.to} external={item.external}>
           <ListItem className="tw-mr-2.5" onClick={item.onClick} key={item.id}>
             <MenuItemIcon icon={item.icon} alt={item.id}/>
             <div className="tw-ml-5 tw-font-medium tw-text-sm tw-color-menu">{item.label}</div>
           </ListItem>
-        )
+        </LinkAdapter>
       ))}
     </List>
   )

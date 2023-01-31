@@ -2,7 +2,7 @@ import {Link, LinkProps} from "react-router-dom";
 import {forwardRef} from "react";
 
 export type LinkAdapterProps = Omit<LinkProps, "to"> & {
-  to: string
+  to?: string
   external?: boolean
 };
 
@@ -11,6 +11,8 @@ const LinkAdapter = forwardRef<HTMLAnchorElement, LinkAdapterProps>(
     {to, external, children, ...props},
     ref
   ) {
+    if (to === undefined) return <>{children}</>;
+
     if (external) {
       return <a target="_blank" rel="noreferrer" ref={ref} href={to} {...props}>{children}</a>
     } else {
