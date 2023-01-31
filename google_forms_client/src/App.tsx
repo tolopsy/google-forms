@@ -1,9 +1,14 @@
-import React from 'react';
+import {Routes} from "react-router-dom";
+import {Route} from "react-router";
 import Home from './scenes/home/Home';
+import {getRoute} from "./routing";
+
 
 function App() {
   return (
-    <Home/>
+    <Routes>
+      <Route path={getRoute("home")} element={<Home/>}/>
+    </Routes>
   );
 }
 
