@@ -1,5 +1,6 @@
-import {ComponentProps, useCallback, useState} from "react"
+import {ComponentProps, useCallback, useState, useEffect} from "react"
 import clsx from "clsx";
+
 import {PersonOutline} from "@mui/icons-material";
 
 export type AvatarProps = ComponentProps<"div"> & {
@@ -10,12 +11,14 @@ export default function Avatar({src, alt, className: classNameEx}: AvatarProps) 
   const [isValidImage, toggleIsValidImage] = useState(!!src);
   const onInvalidImageError = useCallback(() => toggleIsValidImage(false), [])
   alt = alt ?? "avatar"
-  return (
-    <div className={clsx("tw-overflow-hidden tw-rounded-full", classNameEx)}>
-      {isValidImage ? (
-          <img className="tw-w-full tw-h-full" src={src} alt={alt} onError={onInvalidImageError}/>
-        ) : <PersonOutline/>
-      }
-    </div>
-  )
+
+  useEffect(() => {
+    toggleIsValidImage(!!src);
+  }, [src])
+
+  return isValidImage ? (
+      <div className={clsx("tw-overflow-hidden tw-rounded-full", classNameEx)}>
+        <img className="tw-w-8 tw-h-8" src={src} alt={alt} onError={onInvalidImageError}/>
+      </div>
+  ): <PersonOutline/>
 }

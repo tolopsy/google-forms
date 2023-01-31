@@ -15,7 +15,7 @@ export default function MainHeader({className: classNameEx, ...props}: HeaderPro
   return (
     <div
       className={clsx({
-        "tw-sticky tw-flex tw-justify-between tw-items-center": true,
+        "tw-sticky tw-flex tw-justify-between tw-items-center tw-gap-1": true,
         "tw-bg-white tw-text-white": true,
         "tw-my-0 tw-mx-10 tw-py-2": true
       }, classNameEx)}
@@ -24,10 +24,10 @@ export default function MainHeader({className: classNameEx, ...props}: HeaderPro
       <div className="tw-font-family-title tw-flex tw-items-center">
         <MainMenu/>
         <img src={formImage} alt="form" width="40px" height="40px" />
-        <div className="tw-pl-4 tw-text-[22px] tw-color-neutral">Forms</div>
+        <div className="tw-pl-4 tw-text-[22px] tw-color-neutral tw-hidden sm:tw-block">Forms</div>
       </div>
 
-      <SearchInput className="tw-bg-gray-100 tw-h-12 tw-max-w-[720px] tw-rounded-md tw-grow tw-shrink tw-basis-full" value=""/>
+      <SearchInput className="tw-bg-gray-100 tw-h-12 tw-max-w-[720px] tw-rounded-md tw-grow tw-shrink"/>
 
       <div className="tw-flex tw-items-center">
         <IconButton>

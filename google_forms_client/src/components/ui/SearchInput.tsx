@@ -6,13 +6,12 @@ import {Search} from "@mui/icons-material";
 export type SearchProps = Omit<ComponentProps<"div">, "children" | "onChange" | "onChangeCapture"> & {
   placeholder?: string
   disabled?: boolean
-  value: string
+  value?: string
   onChange?: (value: string) => void
 }
 export default function SearchInput({
                                       placeholder,
                                       disabled,
-                                      value,
                                       className: classNameEx,
                                       onChange
                                     }: SearchProps) {
@@ -21,7 +20,7 @@ export default function SearchInput({
   }, [onChange]);
 
   return (
-    <div className={clsx("tw-flex tw-items-center", classNameEx)}>
+    <div className={clsx("tw-flex tw-items-center tw-text-black", classNameEx)}>
       <IconButton>
         <Search/>
       </IconButton>
@@ -30,7 +29,6 @@ export default function SearchInput({
         type="text"
         placeholder={placeholder ?? "Search"}
         disabled={disabled}
-        value={value}
         onChange={onInputChange}
       />
     </div>
