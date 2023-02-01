@@ -17,17 +17,17 @@ export default function MainHeader({className: classNameEx, ...props}: HeaderPro
       className={clsx({
         "tw-sticky tw-flex tw-justify-between tw-items-center tw-gap-1": true,
         "tw-bg-white tw-text-white": true,
-        "tw-my-0 tw-mx-10 tw-py-2": true
+        "tw-my-0 tw-px-2 tw-py-2": true
       }, classNameEx)}
       {...props}
     >
-      <div className="tw-font-family-title tw-flex tw-items-center">
+      <div className="tw-font-family-heading tw-flex tw-items-center">
         <MainMenu/>
-        <img src={formImage} alt="form" width="40px" height="40px" />
-        <div className="tw-pl-4 tw-text-[22px] tw-color-neutral tw-hidden sm:tw-block">Forms</div>
+        <img src={formImage} alt="form" width="40px" height="40px" className="tw-max-w-none" />
+        <div className="tw-text-[22px] tw-color-neutral tw-hidden sm:tw-block">Forms</div>
       </div>
 
-      <SearchInput className="tw-bg-gray-100 tw-h-12 tw-max-w-[720px] tw-rounded-md tw-grow tw-shrink"/>
+      <SearchInput className="tw-bg-gray-100 tw-h-12 tw-max-w-[720px] tw-rounded-md tw-grow tw-shrink tw-font-family-normal sm:tw-mx-4"/>
 
       <div className="tw-flex tw-items-center">
         <IconButton>

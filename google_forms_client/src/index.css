@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
 
 body {
   height: 100%;
@@ -13,11 +15,15 @@ body {
 }
 
 @layer utilities {
-  .tw-font-family-title {
+  .tw-font-family-normal {
     font-family: 'Google Sans',Roboto,Arial,sans-serif;
   }
 
-  .tw-font-family-normal {
+  .tw-font-family-heading {
+    font-family: 'Product Sans',Roboto,Arial,sans-serif;
+  }
+
+  .tw-font-family-info {
     font-family: Roboto,Arial,sans-serif;
   }
 
