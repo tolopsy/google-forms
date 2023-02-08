@@ -33,7 +33,17 @@ export default function MainHeader({className: classNameEx, ...props}: HeaderPro
         <IconButton>
           <AppsIcon/>
         </IconButton>
-        <Avatar src="https://lh3.googleusercontent.com/ogw/AAEL6sjEOT4zQcorntK3zlQLt0p5pAG3x0HI9wtlc0jMaA=s64-c-mo"/>
+        <Avatar
+          element={
+            <div className="tw-text-xs tw-tracking-wide tw-text-neutral-300">
+              <h6 className="tw-text-white">Google Account</h6>
+              <p>John Doe</p>
+              <p>testing@gmail.com</p>
+            </div>
+          }
+          placement="bottom"
+          src="https://lh3.googleusercontent.com/ogw/AAEL6sjEOT4zQcorntK3zlQLt0p5pAG3x0HI9wtlc0jMaA=s64-c-mo"
+        />
       </div>
     </div>
   )
