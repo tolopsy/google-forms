@@ -29,3 +29,10 @@ type Form {
   questions: [Question!]
   responses: [Response!]
 }
+
+type User {
+  id: ID!
+  firstName: String!
+  lastName: String!
+  email: String!
+}

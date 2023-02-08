@@ -7,6 +7,7 @@ import formImage from "../../assets/img/forms_icon.png"
 import MainMenu from "./parts/MainMenu"
 import Avatar from "../ui/Avatar";
 import SearchInput from "../ui/SearchInput";
+import UserSummaryCard from "../../extras/user-summary-card";
 
 
 export type HeaderProps = Omit<ComponentProps<"div">, "children">
@@ -34,13 +35,7 @@ export default function MainHeader({className: classNameEx, ...props}: HeaderPro
           <AppsIcon/>
         </IconButton>
         <Avatar
-          element={
-            <div className="tw-text-xs tw-tracking-wide tw-text-neutral-300">
-              <h6 className="tw-text-white">Google Account</h6>
-              <p>John Doe</p>
-              <p>testing@gmail.com</p>
-            </div>
-          }
+          element={<UserSummaryCard/>}
           placement="bottom"
           src="https://lh3.googleusercontent.com/ogw/AAEL6sjEOT4zQcorntK3zlQLt0p5pAG3x0HI9wtlc0jMaA=s64-c-mo"
         />

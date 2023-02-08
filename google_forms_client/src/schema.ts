@@ -46,3 +46,11 @@ export type Response = {
   readonly __typename?: 'Response';
   readonly id: Scalars['ID'];
 };
+
+export type User = {
+  readonly __typename?: 'User';
+  readonly email: Scalars['String'];
+  readonly firstName: Scalars['String'];
+  readonly id: Scalars['ID'];
+  readonly lastName: Scalars['String'];
+};
