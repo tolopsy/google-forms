@@ -8,11 +8,13 @@ import MainMenu from "./parts/MainMenu"
 import Avatar from "../ui/Avatar";
 import SearchInput from "../ui/SearchInput";
 import UserSummaryCard from "../../extras/user-summary-card";
+import useCurrentUser from "../../hooks/useCurrentUser";
 
 
 export type HeaderProps = Omit<ComponentProps<"div">, "children">
 
 export default function MainHeader({className: classNameEx, ...props}: HeaderProps) {
+  const {photo} = useCurrentUser();
   return (
     <div
       className={clsx({
@@ -22,13 +24,13 @@ export default function MainHeader({className: classNameEx, ...props}: HeaderPro
       }, classNameEx)}
       {...props}
     >
-      <div className="tw-font-family-heading tw-flex tw-items-center">
+      <div className="tw-font-family-brand tw-flex tw-items-center">
         <MainMenu/>
-        <img src={formImage} alt="form" width="40px" height="40px" className="tw-max-w-none" />
+        <img src={formImage} alt="form" width="40px" height="40px" className="tw-max-w-none tw-cursor-pointer" />
         <div className="tw-text-[22px] tw-color-neutral tw-hidden sm:tw-block">Forms</div>
       </div>
 
-      <SearchInput className="tw-bg-gray-100 tw-h-12 tw-max-w-[720px] tw-rounded-md tw-grow tw-shrink tw-font-family-normal sm:tw-mx-4"/>
+      <SearchInput className="tw-bg-gray-100 tw-h-12 tw-max-w-[720px] tw-rounded-md tw-grow tw-shrink tw-font-family-brand sm:tw-mx-4"/>
 
       <div className="tw-flex tw-items-center">
         <IconButton>
@@ -37,7 +39,7 @@ export default function MainHeader({className: classNameEx, ...props}: HeaderPro
         <Avatar
           hoverElement={<UserSummaryCard/>}
           hoverElementPlacement="bottom"
-          src="https://lh3.googleusercontent.com/ogw/AAEL6sjEOT4zQcorntK3zlQLt0p5pAG3x0HI9wtlc0jMaA=s64-c-mo"
+          src={photo ?? ""}
         />
       </div>
     </div>

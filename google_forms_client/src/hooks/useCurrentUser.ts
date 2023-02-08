@@ -6,6 +6,7 @@ export default function useCurrentUser(): User {
   id: "1",
   firstName: "Anonymous",
   lastName: "User",
-  email: "anonymous.user@gmail.com"
+  email: "anonymous.user@gmail.com",
+  photo: ""
  }
 }

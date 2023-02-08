@@ -35,4 +35,10 @@ type User {
   firstName: String!
   lastName: String!
   email: String!
+  photo: String
+}
+
+type ActivityHint {
+  state: String
+  summary: String
 }

@@ -12,6 +12,12 @@ export type Scalars = {
   Float: number;
 };
 
+export type ActivityHint = {
+  readonly __typename?: 'ActivityHint';
+  readonly state?: Maybe<Scalars['String']>;
+  readonly summary?: Maybe<Scalars['String']>;
+};
+
 export type Form = {
   readonly __typename?: 'Form';
   readonly id: Scalars['ID'];
@@ -53,4 +59,5 @@ export type User = {
   readonly firstName: Scalars['String'];
   readonly id: Scalars['ID'];
   readonly lastName: Scalars['String'];
+  readonly photo?: Maybe<Scalars['String']>;
 };
