@@ -1,6 +1,6 @@
 import {ComponentProps} from "react";
 import clsx from "clsx";
-import { IconButton } from "@mui/material"
+import {IconButton} from "@mui/material"
 import AppsIcon from "@mui/icons-material/Apps"
 
 import formImage from "../../assets/img/forms_icon.png"
@@ -33,9 +33,7 @@ export default function MainHeader({className: classNameEx, ...props}: HeaderPro
         <IconButton>
           <AppsIcon/>
         </IconButton>
-        <IconButton>
-          <Avatar/>
-        </IconButton>
+        <Avatar src="https://lh3.googleusercontent.com/ogw/AAEL6sjEOT4zQcorntK3zlQLt0p5pAG3x0HI9wtlc0jMaA=s64-c-mo"/>
       </div>
     </div>
   )
