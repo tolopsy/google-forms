@@ -6,6 +6,7 @@ class RouteNotExist extends Error {
 
 const routes = {
   "home": "/",
+  "manageForm": "/:formId/edit/"
 };
 
 export function getPath(routeName: keyof typeof routes): string {
