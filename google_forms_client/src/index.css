@@ -15,15 +15,7 @@ body {
 }
 
 @layer utilities {
-  .tw-font-family-normal {
-    font-family: 'Google Sans',Roboto,Arial,sans-serif;
-  }
-
-  .tw-font-family-heading {
-    font-family: 'Product Sans',Roboto,Arial,sans-serif;
-  }
-
-  .tw-font-family-info {
+  .tw-font-family-brand {
     font-family: Roboto,Arial,sans-serif;
   }
 
@@ -37,5 +29,9 @@ body {
 
   .tw-color-dark {
     color: #202124;
+  }
+
+  .tw-bg-brand {
+    background-color: #673ab7;
   }
 }
