@@ -5,13 +5,15 @@ import clsx from "clsx";
 import {PersonOutline} from "@mui/icons-material";
 import TooltipWrapper, {TooltipWrapperProps} from "./TooltipWrapper";
 
-export type AvatarProps = Pick<ComponentProps<"div">, "className"> & Pick<IconButtonProps, "size" | "disableRipple"> 
-  & Omit<TooltipWrapperProps, "children"> & {
+export type AvatarProps = Pick<ComponentProps<"div">, "className"> & Pick<IconButtonProps, "size" | "disableRipple">  & {
   alt?: string
   src?: string
+
+  hoverElement?: TooltipWrapperProps["element"]
+  hoverElementPlacement?: TooltipWrapperProps["placement"]
 }
 
-export default function Avatar({element, placement, src, alt, size, disableRipple, className: classNameEx, ...props}: AvatarProps) {
+export default function Avatar({hoverElement,hoverElementPlacement, src, alt, size, disableRipple, className: classNameEx, ...props}: AvatarProps) {
   const [isValidImage, toggleIsValidImage] = useState(!!src);
   const onInvalidImageError = useCallback(() => toggleIsValidImage(false), [])
   alt = alt ?? "avatar"
@@ -22,8 +24,8 @@ export default function Avatar({element, placement, src, alt, size, disableRippl
 
   return (
     <TooltipWrapper
-      placement={placement}
-      element={element}
+      placement={hoverElementPlacement}
+      element={hoverElement}
       {...props}
     >
     <IconButton size={size ?? "small"} disableRipple={disableRipple ?? false}>

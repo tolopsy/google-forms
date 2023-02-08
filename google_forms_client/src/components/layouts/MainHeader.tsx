@@ -35,8 +35,8 @@ export default function MainHeader({className: classNameEx, ...props}: HeaderPro
           <AppsIcon/>
         </IconButton>
         <Avatar
-          element={<UserSummaryCard/>}
-          placement="bottom"
+          hoverElement={<UserSummaryCard/>}
+          hoverElementPlacement="bottom"
           src="https://lh3.googleusercontent.com/ogw/AAEL6sjEOT4zQcorntK3zlQLt0p5pAG3x0HI9wtlc0jMaA=s64-c-mo"
         />
       </div>
