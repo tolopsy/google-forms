@@ -26,7 +26,7 @@ export default function MainHeader({className: classNameEx, ...props}: HeaderPro
     >
       <div className="tw-font-family-brand tw-flex tw-items-center">
         <MainMenu/>
-        <img src={formImage} alt="form" width="40px" height="40px" className="tw-max-w-none tw-cursor-pointer" />
+        <img src={formImage} alt="form" width="48px" height="48px" className="tw-max-w-none tw-cursor-pointer" />
         <div className="tw-text-[22px] tw-color-neutral tw-hidden sm:tw-block">Forms</div>
       </div>
 

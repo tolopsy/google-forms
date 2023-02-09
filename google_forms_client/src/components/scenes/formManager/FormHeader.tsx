@@ -27,12 +27,12 @@ export default function FormHeader({formTitle, setFormTitle, isStarred, activity
   const {photo} = useCurrentUser();
 
   return (
-    <div className="tw-flex tw-items-center tw-justify-between tw-bg-white tw-my-1.5 tw-mx-4">
+    <div className="tw-flex tw-items-center tw-justify-between tw-bg-white tw-pt-1.5 tw-mx-4">
       <div className="tw-flex tw-items-center tw-justify-evenly">
         <img
           src={formImage}
-          height="40px"
-          width="40px"
+          height="48px"
+          width="48px"
           className="tw-cursor-pointer tw-max-w-none"
           alt="logo"
           onClick={() => navigate(getPath("home"))}
@@ -71,7 +71,7 @@ export default function FormHeader({formTitle, setFormTitle, isStarred, activity
           <BiRedo/>
         </IconButton>
 
-        <Button variant="contained" href="#contained-button" className="!tw-mx-2.5 !tw-bg-brand hover:!tw-bg-[#673ab7db]">Send</Button>
+        <Button variant="contained" href="#contained-button" className="!tw-mx-2.5 !tw-bg-brand hover:!tw-bg-[#673ab7db] !tw-px-6">Send</Button>
 
         <IconButton>
           <MoreVert className="!tw-mr-2.5 tw-color-dark tw-text-xl"/>
