@@ -15,14 +15,14 @@ import useCurrentUser from "../../../hooks/useCurrentUser";
 
 export type FormHeaderProps = {
   formTitle?: string
-  setFormTitle?: ChangeEventHandler
+  onSetTitle?: ChangeEventHandler
   isStarred?: boolean
   activityHint: ActivityHint
 
   onSendForm?: () => void
 }
 
-export default function FormHeader({formTitle, setFormTitle, isStarred, activityHint, onSendForm}: FormHeaderProps) {
+export default function FormHeader({formTitle, onSetTitle, isStarred, activityHint, onSendForm}: FormHeaderProps) {
   const navigate = useNavigate();
   const {photo} = useCurrentUser();
 
@@ -41,7 +41,7 @@ export default function FormHeader({formTitle, setFormTitle, isStarred, activity
         <input
           type="text"
           value={formTitle ?? "Untitled Form"}
-          onChange={setFormTitle}
+          onChange={onSetTitle}
           className="tw-border-none tw-outline-none tw-font-family-brand tw-text-lg 
             tw-font-normal tw-color-dark tw-ml-4 tw-leading-6 tw-w-[120px] focus:tw-border focus:tw-border-black"
         />
@@ -53,7 +53,7 @@ export default function FormHeader({formTitle, setFormTitle, isStarred, activity
         }
 
         <TooltipWrapper element={activityHint.state} placement="bottom">
-          <span className="tw-text-xs tw-font-semibold">{activityHint.summary}</span>
+          <span className="tw-text-xs tw-font-family-brand tw-font-normal tw-color-neutral">{activityHint.summary}</span>
         </TooltipWrapper>
       </div>
 
@@ -73,8 +73,8 @@ export default function FormHeader({formTitle, setFormTitle, isStarred, activity
 
         <Button variant="contained" href="#contained-button" className="!tw-mx-2.5 !tw-bg-brand hover:!tw-bg-[#673ab7db] !tw-px-6">Send</Button>
 
-        <IconButton>
-          <MoreVert className="!tw-mr-2.5 tw-color-dark tw-text-xl"/>
+        <IconButton className="!tw-mr-2.5 tw-color-dark tw-text-xl">
+          <MoreVert/>
         </IconButton>
         <Avatar
           hoverElement={<UserSummaryCard/>}
