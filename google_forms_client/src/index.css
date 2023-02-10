@@ -34,4 +34,8 @@ body {
   .tw-bg-brand {
     background-color: #673ab7;
   }
+
+  .tw-color-brand {
+    color: #673ab7;
+  }
 }
