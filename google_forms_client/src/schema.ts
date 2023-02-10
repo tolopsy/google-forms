@@ -20,6 +20,7 @@ export type ActivityHint = {
 
 export type Form = {
   readonly __typename?: 'Form';
+  readonly description?: Maybe<Scalars['String']>;
   readonly id: Scalars['ID'];
   readonly img?: Maybe<Scalars['String']>;
   readonly name: Scalars['String'];

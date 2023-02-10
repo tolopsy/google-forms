@@ -25,6 +25,7 @@ type Response {
 type Form {
   id: ID!
   name: String!
+  description: String
   img: String
   questions: [Question!]
   responses: [Response!]
