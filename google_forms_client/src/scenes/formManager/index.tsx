@@ -1,5 +1,5 @@
 import FormHeader from "../../components/scenes/formManager/FormHeader";
-import {ActivityHint, Form} from "../../schema";
+import {ActivityHint, Form, Question} from "../../schema";
 import Root from "../../components/layouts/Root";
 import {SyntheticEvent, useState, ChangeEvent, useCallback} from "react";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
@@ -11,6 +11,7 @@ type tabValues = "questions" | "responses"
 export default function FormManager() {
   const [formTitle, setFormTitle] = useState<Form["name"]>("Untitled Form");
   const [formDescription, setFormDescription] = useState<Form["description"]>("");
+  const [questions, setQuestions] = useState<Question[]>([]);
 
 
   // TODO: To be made dynamic
@@ -66,6 +67,7 @@ export default function FormManager() {
               onSetTitle={handleSetTitle}
               formDescription={formDescription}
               onSetDescription={handleSetDescription}
+              questions={questions}
             />
           </TabPanel>
           <TabPanel value="responses">Responses</TabPanel>

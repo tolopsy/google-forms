@@ -1,17 +1,23 @@
-import { ChangeEventHandler } from "react"
+import { DragIndicator } from "@mui/icons-material";
+import {ChangeEventHandler} from "react";
+import {DragDropContext, Draggable, Droppable} from "react-beautiful-dnd";
+import { Question } from "../../schema";
 
 export type QuestionsTabProps = {
   formTitle: string
   formDescription?: string | null
   onSetTitle?: ChangeEventHandler
   onSetDescription?: ChangeEventHandler
+
+  questions: Question[]
 }
 
 export default function QuestionsTab({
                                       formTitle,
                                       formDescription,
                                       onSetTitle,
-                                      onSetDescription
+                                      onSetDescription,
+                                      questions,
                                     }: QuestionsTabProps) {
 
   return (
@@ -37,7 +43,42 @@ export default function QuestionsTab({
               />
             </div>
           </div>
-          {/*TODO: Draggable Context*/}
+
+          {/*TODO: Update Draggable Context*/}
+          <DragDropContext onDragEnd={() => null}>
+            <Droppable droppableId="droppable-questions">
+              {(provided, snapshot) => (
+                <div
+                  ref={provided.innerRef}
+                  {...provided.droppableProps}
+                >
+                  {questions.map((question, index) => (
+                    <Draggable key={index} draggableId={`id-${index}`} index={index}>
+                      {(provided, snapshot) => (
+                        <div
+                          {...provided.draggableProps}
+                          {...provided.dragHandleProps}
+                          ref={provided.innerRef}
+                        >
+                          <div>
+                            <div className="tw-mb-0">
+                              <div className="tw-mb-0 tw-w-full">
+                                <DragIndicator
+                                  fontSize="small"
+                                  className="coming soon"
+                                />
+                              </div>
+                              {/**Accordion stays here i.e main Question component */}
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                    </Draggable>
+                  ))}
+                </div>
+              )}
+            </Droppable>
+          </DragDropContext>
         </div>
       </div>
     </div>
