@@ -1,8 +1,8 @@
 import {DragIndicator} from "@mui/icons-material";
 import {ChangeEventHandler, useCallback, useState} from "react";
 import {DragDropContext, Draggable, Droppable} from "react-beautiful-dnd";
-import QuestionAccordion from "../../components/scenes/formManager/QuestionAccordion";
-import {Question, Scalars} from "../../schema";
+import MultipleChoiceQuestionArea from "../../components/scenes/formManager/MultipleChoiceQuestionArea";
+import {Question, QuestionType, Scalars} from "../../schema";
 
 export type QuestionsTabProps = {
   formTitle: string
@@ -73,11 +73,13 @@ export default function QuestionsTab({
                                   className="coming soon"
                                 />
                               </div>
-                              <QuestionAccordion
-                                question={question}
-                                onExpand={handleQuestionAccordionExpand}
-                                open={question.id === openQuestionId}
-                              />
+                              {question.type === QuestionType.MULTIPLE_CHOICE &&
+                                <MultipleChoiceQuestionArea
+                                  question={question}
+                                  onExpand={handleQuestionAccordionExpand}
+                                  open={question.id === openQuestionId}
+                                />
+                              }
                             </div>
                           </div>
                         </div>
