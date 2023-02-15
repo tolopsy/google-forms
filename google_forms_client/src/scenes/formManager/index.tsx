@@ -6,12 +6,13 @@ import { TabContext, TabList, TabPanel } from "@mui/lab";
 import { Tab } from "@mui/material";
 import clsx from "clsx";
 import QuestionsTab from "./QuestionsTab";
+import stubQuestions from "../../data/stubQuestions";
 
 type tabValues = "questions" | "responses"
 export default function FormManager() {
   const [formTitle, setFormTitle] = useState<Form["name"]>("Untitled Form");
   const [formDescription, setFormDescription] = useState<Form["description"]>("");
-  const [questions, setQuestions] = useState<Question[]>([]);
+  const [questions, setQuestions] = useState<Question[]>(stubQuestions);
 
 
   // TODO: To be made dynamic

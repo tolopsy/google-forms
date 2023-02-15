@@ -1,7 +1,8 @@
-import { DragIndicator } from "@mui/icons-material";
-import {ChangeEventHandler} from "react";
+import {DragIndicator} from "@mui/icons-material";
+import {ChangeEventHandler, useCallback, useState} from "react";
 import {DragDropContext, Draggable, Droppable} from "react-beautiful-dnd";
-import { Question } from "../../schema";
+import QuestionAccordion from "../../components/scenes/formManager/QuestionAccordion";
+import {Question, Scalars} from "../../schema";
 
 export type QuestionsTabProps = {
   formTitle: string
@@ -19,6 +20,11 @@ export default function QuestionsTab({
                                       onSetDescription,
                                       questions,
                                     }: QuestionsTabProps) {
+  
+  const [openQuestionId, setOpenQuestionId] = useState<Scalars["ID"]>(questions[0].id);
+  const handleQuestionAccordionExpand = useCallback((id: Scalars["ID"]) => {
+    setOpenQuestionId(id)
+  }, [setOpenQuestionId])
 
   return (
     <div>
@@ -44,7 +50,6 @@ export default function QuestionsTab({
             </div>
           </div>
 
-          {/*TODO: Update Draggable Context*/}
           <DragDropContext onDragEnd={() => null}>
             <Droppable droppableId="droppable-questions">
               {(provided, snapshot) => (
@@ -68,13 +73,18 @@ export default function QuestionsTab({
                                   className="coming soon"
                                 />
                               </div>
-                              {/**Accordion stays here i.e main Question component */}
+                              <QuestionAccordion
+                                question={question}
+                                onExpand={handleQuestionAccordionExpand}
+                                open={question.id === openQuestionId}
+                              />
                             </div>
                           </div>
                         </div>
                       )}
                     </Draggable>
                   ))}
+                  {provided.placeholder}
                 </div>
               )}
             </Droppable>
