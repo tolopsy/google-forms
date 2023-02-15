@@ -31,9 +31,8 @@ export type Form = {
 export type Question = {
   readonly __typename?: 'Question';
   readonly answer?: Maybe<Scalars['String']>;
-  readonly hasAnswer: Scalars['Boolean'];
+  readonly hasAnswer?: Maybe<Scalars['Boolean']>;
   readonly id: Scalars['ID'];
-  readonly open: Scalars['Boolean'];
   readonly options?: Maybe<ReadonlyArray<Scalars['String']>>;
   readonly points?: Maybe<Scalars['Int']>;
   readonly required: Scalars['Boolean'];
