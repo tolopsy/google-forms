@@ -6,12 +6,9 @@ from application.http import run as run_http
 
 
 def get_db():
-    db_host = os.getenv("DB_HOST")
-    db_name = os.getenv("DB_NAME")
-    db_user = os.getenv("DB_USER")
-    db_user_password = os.getenv("DB_PASSWORD")
+    dsn = os.getenv("DB_DSN")
+    db = PostgresDB(dsn=dsn)
 
-    db = PostgresDB(host=db_host, database=db_name, user=db_user, password=db_user_password)
     return db
 
 if __name__ == "__main__":

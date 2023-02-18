@@ -4,8 +4,8 @@ from core.models import Question
 
 
 class PostgresDB(DatabasePort):
-    def __init__(self, host: str, database: str, user: str, password: str):
-        self.conn = psycopg2.connect(host=host, database=database, user=user, password=password)
+    def __init__(self, dsn: str):
+        self.conn = psycopg2.connect(dsn=dsn)
 
     def save_question(self, question: Question) -> Question:
         
