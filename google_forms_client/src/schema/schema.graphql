@@ -1,3 +1,5 @@
+scalar Timestamp
+
 directive @allowUnoptimized on FIELD
 
 enum QuestionType {
@@ -27,7 +29,9 @@ type Form {
   id: ID!
   name: String!
   description: String
-  img: String
+  thumbnail: String
+  createdAt: Timestamp!
+  lastModifiedAt: Timestamp!
   questions: [Question!]
   responses: [Response!]
 }

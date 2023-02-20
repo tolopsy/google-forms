@@ -10,6 +10,7 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
+  Timestamp: number;
 };
 
 export type ActivityHint = {
@@ -20,12 +21,14 @@ export type ActivityHint = {
 
 export type Form = {
   readonly __typename?: 'Form';
+  readonly createdAt: Scalars['Timestamp'];
   readonly description?: Maybe<Scalars['String']>;
   readonly id: Scalars['ID'];
-  readonly img?: Maybe<Scalars['String']>;
+  readonly lastModifiedAt: Scalars['Timestamp'];
   readonly name: Scalars['String'];
   readonly questions?: Maybe<ReadonlyArray<Question>>;
   readonly responses?: Maybe<ReadonlyArray<Response>>;
+  readonly thumbnail?: Maybe<Scalars['String']>;
 };
 
 export type Question = {
