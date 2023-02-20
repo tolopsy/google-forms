@@ -5,28 +5,28 @@ import rsvpFormImg from "../assets/img/rsvp-form.png";
 import partyInviteImg from "../assets/img/party-form-bg.png";
 import eventRegImg from "../assets/img/event-registration-form.png";
 
-export type TemplateType = Omit<Form, "id" | "responses">
+export type TemplateType = Omit<Form, "id" | "responses" | "createdAt" | "lastModifiedAt">
 
 const templates: TemplateType[] = [
   {
     name: "Work Request",
-    img: workRequestImg,
+    thumbnail: workRequestImg,
   },
   {
     name: "Contact Information",
-    img: contactFormImg,
+    thumbnail: contactFormImg,
   },
   {
     name: "RSVP",
-    img: rsvpFormImg,
+    thumbnail: rsvpFormImg,
   },
   {
     name: "Party Invite",
-    img: partyInviteImg,
+    thumbnail: partyInviteImg,
   },
   {
     name: "Event Registration",
-    img: eventRegImg,
+    thumbnail: eventRegImg,
   }
 ]
 

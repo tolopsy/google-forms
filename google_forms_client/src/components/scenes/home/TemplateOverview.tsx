@@ -4,7 +4,11 @@ import blankFormImg from "../../../assets/img/forms-blank-googlecolors.png"
 import defaultFormImg from "../../../assets/img/work-request-form-bg.png"
 import templates from "../../../data/templates";
 
-export default function TemplateOverview() {
+export type TemplateOverviewType = {
+  onCreateBlankForm?: () => void
+}
+
+export default function TemplateOverview({onCreateBlankForm}: TemplateOverviewType) {
   const recentlyUsedTemplates = templates.slice(0,5)
   return (
     <div className="tw-bg-gray-100 tw-pb-10 tw-pt-1.5 tw-color-dark">
@@ -24,6 +28,7 @@ export default function TemplateOverview() {
         <div className="tw-mt-4">
           <img
             src={blankFormImg}
+            onClick={onCreateBlankForm}
             alt="blank form"
             className="tw-h-[128px] tw-w-[171px] tw-box-border tw-cursor-pointer tw-rounded
               tw-border-[0.2px] tw-border-solid tw-border-slate-300 hover:tw-border hover:tw-border-purple-800"
@@ -34,7 +39,7 @@ export default function TemplateOverview() {
         {recentlyUsedTemplates.map(template => (
           <div className="tw-mt-4 tw-ml-5">
             <img
-              src={template.img ?? defaultFormImg}
+              src={template.thumbnail ?? defaultFormImg}
               alt={template.name}
               className="tw-h-[128px] tw-w-[171px] tw-box-border tw-cursor-pointer tw-rounded
                 tw-border-[0.2px] tw-border-solid tw-border-slate-300 hover:tw-border hover:tw-border-purple-800"
