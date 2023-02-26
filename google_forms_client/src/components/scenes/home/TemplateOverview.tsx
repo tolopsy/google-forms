@@ -36,8 +36,8 @@ export default function TemplateOverview({onCreateBlankForm}: TemplateOverviewTy
           <p className="tw-font-medium tw-text-sm tw-mt-0.5">Blank</p>
         </div>
 
-        {recentlyUsedTemplates.map(template => (
-          <div className="tw-mt-4 tw-ml-5">
+        {recentlyUsedTemplates.map((template, index) => (
+          <div className="tw-mt-4 tw-ml-5" key={index}>
             <img
               src={template.thumbnail ?? defaultFormImg}
               alt={template.name}
