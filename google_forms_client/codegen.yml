@@ -9,6 +9,9 @@ generates:
       strictScalars: true
       immutableTypes: true
 
+      scalars:
+        Timestamp: number
+
       namingConvention:
         enumValues: keep
         typeNames: keep
