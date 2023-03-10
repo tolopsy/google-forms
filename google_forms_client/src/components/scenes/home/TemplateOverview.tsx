@@ -33,7 +33,7 @@ export default function TemplateOverview({onCreateBlankForm}: TemplateOverviewTy
             className="tw-h-[128px] tw-w-[171px] tw-box-border tw-cursor-pointer tw-rounded
               tw-border-[0.2px] tw-border-solid tw-border-slate-300 hover:tw-border hover:tw-border-purple-800"
           />
-          <p className="tw-font-medium tw-text-sm tw-mt-0.5">Blank</p>
+          <p className="tw-font-medium tw-text-sm tw-mt-2.5">Blank</p>
         </div>
 
         {recentlyUsedTemplates.map((template, index) => (
